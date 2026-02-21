@@ -1,0 +1,336 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Fri Nov 28 18:38:03 +0100 2025
+    * Version:         2025.1 (Build 6135595 on May 21 2025)
+    * Project:         HLS_Logistic5f
+    * Solution:        hls (Vivado IP Flow Target)
+    * Product family:  artixuplus
+    * Target device:   xcau20p-ffvb676-2-i
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  5 ns
+    * C-Synthesis target clock:    3 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              11578
+FF:               21057
+DSP:              111
+BRAM:             4
+URAM:             0
+SRL:              1124
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 5.000       |
+| Post-Synthesis | 1.844       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++---------------------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                                    | LUT   | FF    | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++---------------------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                                    | 11578 | 21057 | 111 | 4    |      |     |        |      |         |          |        |
+|   (inst)                                                | 8     | 1477  |     |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12                   | 894   | 1062  | 3   |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13                   | 764   | 1062  | 3   |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U14                   | 698   | 1062  | 3   |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U15                   | 698   | 1062  | 3   |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U16                   | 697   | 1062  | 3   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U17                   | 316   | 593   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U18                   | 247   | 578   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U19                   | 210   | 514   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U20                   | 212   | 517   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U21                   | 209   | 511   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U22                   | 196   | 463   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U23                   | 198   | 463   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U24                   | 192   | 527   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U25                   | 196   | 526   | 7   |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U26                   | 198   | 527   | 7   |      |      |     |        |      |         |          |        |
+|   grp_predict_model_Pipeline_3_fu_196                   | 147   | 350   |     |      |      |     |        |      |         |          |        |
+|     (grp_predict_model_Pipeline_3_fu_196)               | 58    | 211   |     |      |      |     |        |      |         |          |        |
+|     dcmp_64ns_64ns_1_4_no_dsp_1_U8                      | 85    | 137   |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U            |       |       |     |      |      |     |        |      |         |          |        |
+|   grp_predict_model_Pipeline_VITIS_LOOP_29_1_fu_185     | 2061  | 2340  | 26  |      |      |     |        |      |         |          |        |
+|     (grp_predict_model_Pipeline_VITIS_LOOP_29_1_fu_185) | 16    | 74    |     |      |      |     |        |      |         |          |        |
+|     dexp_64ns_64ns_64_58_full_dsp_1_U1                  | 2035  | 2264  | 26  |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U            |       |       |     |      |      |     |        |      |         |          |        |
+|   grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190     | 3346  | 6361  |     |      |      |     |        |      |         |          |        |
+|     (grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190) | 45    | 197   |     |      |      |     |        |      |         |          |        |
+|     ddiv_64ns_64ns_64_59_no_dsp_1_U4                    | 3248  | 6162  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U            | 53    | 2     |     |      |      |     |        |      |         |          |        |
+|   y_U                                                   | 91    |       |     | 4    |      |     |        |      |         |          |        |
++---------------------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 10.62% | OK     |
+| FD                                                        | 50%       | 9.66%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 1.13%  | OK     |
+| CARRY8                                                    | 25%       | 2.80%  | OK     |
+| MUXF7                                                     | 15%       | 0.44%  | OK     |
+| DSP                                                       | 80%       | 12.33% | OK     |
+| RAMB/FIFO                                                 | 80%       | 1.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 6.67%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2044      | 79     | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 1.25   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.300ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.208ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+---------------------+-------------------------------------------------------------------+------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+| Path  |               SLACK | STARTPOINT PIN                                                    | ENDPOINT PIN                                                     | LOGIC LEVELS | MAX FANOUT |      DATAPATH DELAY |      DATAPATH LOGIC |        DATAPATH NET |
+|       |                     |                                                                   |                                                                  |              |            |                     |               DELAY |               DELAY |
++-------+---------------------+-------------------------------------------------------------------+------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+| Path1 | 3.15564465522766113 | y_U/ram_reg_bram_1/CLKARDCLK                                      | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_1_reg_303_reg[0]/D |            3 |          6 | 1.77900016307830811 | 1.22500014305114746 | 0.55400002002716064 |
+| Path2 | 3.20464444160461426 | y_U/ram_reg_bram_0/CLKBWRCLK                                      | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_3_reg_313_reg[0]/D |            3 |          3 | 1.73000013828277588 | 1.06500005722045898 | 0.66500002145767212 |
+| Path3 | 3.20664453506469727 | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg/C | y_U/ram_reg_bram_0/ADDRARDADDR[6]                                |            5 |         37 | 1.48200011253356934 | 0.28199997544288635 | 1.20000004768371582 |
+| Path4 | 3.20664453506469727 | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg/C | y_U/ram_reg_bram_1/ADDRARDADDR[6]                                |            5 |         37 | 1.48200011253356934 | 0.28199997544288635 | 1.20000004768371582 |
+| Path5 | 3.21664428710937500 | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg/C | y_U/ram_reg_bram_0/ADDRARDADDR[5]                                |            5 |         37 | 1.40500009059906006 | 0.28199997544288635 | 1.12300002574920654 |
++-------+---------------------+-------------------------------------------------------------------+------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_1_reg_303[0]_i_8                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_2                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_1_reg_303_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_3_reg_313[0]_i_11                                                                                | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_3                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_3_reg_313_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[3]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_55 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_5  | CLB.LUT.LUT5           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_1_reg_303[0]_i_8                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_2                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_1_reg_303_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_3_reg_313[0]_i_11                                                                                | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_3                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_3_reg_313_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[3]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_55 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_5  | CLB.LUT.LUT5           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_1_reg_303[0]_i_8                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_2                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_1_reg_303_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_3_reg_313[0]_i_11                                                                                | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_3                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_3_reg_313_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[3]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_55 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_5  | CLB.LUT.LUT5           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_1_reg_303[0]_i_8                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_2                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_1_reg_303_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_3_reg_313[0]_i_11                                                                                | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_3                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_3_reg_313_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[3]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_55 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_5  | CLB.LUT.LUT5           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                    | Primitive Type         |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_1_reg_303[0]_i_8                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_2                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_1_reg_303[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_1_reg_303_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | y_U/icmp_ln43_3_reg_313[0]_i_11                                                                                | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_3                                                                                 | CLB.LUT.LUT6           |
+    | y_U/icmp_ln43_3_reg_313[0]_i_1                                                                                 | CLB.LUT.LUT5           |
+    | grp_predict_model_Pipeline_3_fu_196/icmp_ln43_3_reg_313_reg[0]                                                 | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[4]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_54 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_4  | CLB.LUT.LUT6           |
+    | y_U/ram_reg_bram_1                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    | grp_predict_model_Pipeline_3_fu_196/ap_enable_reg_pp0_iter1_reg                                                | REGISTER.SDR.FDRE      |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_3                                                 | CLB.LUT.LUT2           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[34]_i_2                                                 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_3_fu_196/p_result_2_reg_264[3]_i_1                                                  | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_55 | CLB.LUT.LUT6           |
+    | grp_predict_model_Pipeline_VITIS_LOOP_35_2_fu_190/flow_control_loop_pipe_sequential_init_U/ram_reg_bram_0_i_5  | CLB.LUT.LUT5           |
+    | y_U/ram_reg_bram_0                                                                                             | BLOCKRAM.BRAM.RAMB36E2 |
+    +----------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+----------------------------------------------------------------------+
+| Report Type              | Report Location                                                      |
++--------------------------+----------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/predict_model_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/predict_model_failfast_synth.rpt                 |
+| power                    | impl/verilog/report/predict_model_power_synth.rpt                    |
+| timing                   | impl/verilog/report/predict_model_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/predict_model_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/predict_model_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/predict_model_utilization_hierarchical_synth.rpt |
++--------------------------+----------------------------------------------------------------------+
+
+

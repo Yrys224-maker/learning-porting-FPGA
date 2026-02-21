@@ -1,0 +1,182 @@
+
+
+================================================================
+== Synthesis Summary Report of 'predict_model'
+================================================================
++ General Information: 
+    * Date:           Fri Nov 28 17:46:26 2025
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        HLS_Logistic5f
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artixuplus
+    * Target device:  xcau20p-ffvb676-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------+---------+-------+---------+---------+----------+---------+------+----------+------+-----------+------------+-------------+-----+
+    |                  Modules                  |  Issue  |       |      Latency      | Iteration|         | Trip |          |      |           |            |             |     |
+    |                  & Loops                  |   Type  | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |    DSP    |     FF     |     LUT     | URAM|
+    +-------------------------------------------+---------+-------+---------+---------+----------+---------+------+----------+------+-----------+------------+-------------+-----+
+    |+ predict_model                            |   Timing|  -0.62|      318|  954.000|         -|      319|     -|        no|     -|  141 (15%)|  16320 (7%)|  12978 (11%)|    -|
+    | + predict_model_Pipeline_VITIS_LOOP_29_1  |        -|   0.07|       66|  198.000|         -|        6|     -|    rewind|     -|    26 (2%)|   3156 (1%)|    3876 (3%)|    -|
+    |  o VITIS_LOOP_29_1                        |        -|   2.19|       64|  192.000|        61|        1|     5|       yes|     -|          -|           -|            -|    -|
+    | + predict_model_Pipeline_VITIS_LOOP_35_2  |   Timing|  -0.62|       67|  201.000|         -|        6|     -|    rewind|     -|          -|   321 (~0%)|     90 (~0%)|    -|
+    |  o VITIS_LOOP_35_2                        |        -|   2.19|       65|  195.000|        62|        1|     5|       yes|     -|          -|           -|            -|    -|
+    | + predict_model_Pipeline_3                |        -|   0.41|       26|   78.000|         -|       25|     -|    rewind|     -|          -|   277 (~0%)|    348 (~0%)|    -|
+    |  o Loop 1                                 |       II|   2.19|       24|   72.000|         7|        6|     4|       yes|     -|          -|           -|            -|    -|
+    +-------------------------------------------+---------+-------+---------+---------+----------+---------+------+----------+------+-----------+------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++-----------+---------+-----------+----------+
+| Port      | Mode    | Direction | Bitwidth |
++-----------+---------+-----------+----------+
+| ap_return |         | out       | 32       |
+| x         | ap_none | in        | 320      |
++-----------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------------------+
+| Argument | Direction | Datatype                 |
++----------+-----------+--------------------------+
+| x        | in        | array<double, 5> const & |
+| return   | out       | int                      |
++----------+-----------+--------------------------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| x        | x            | port    |
+| return   | ap_return    | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------+-----+--------+-------------+--------+----------+---------+
+| Name                                      | DSP | Pragma | Variable    | Op     | Impl     | Latency |
++-------------------------------------------+-----+--------+-------------+--------+----------+---------+
+| + predict_model                           | 141 |        |             |        |          |         |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U17     | 10  |        | mul         | dmul   | fulldsp  | 13      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U18     | 10  |        | mul5        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add         | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U17     | 10  |        | mul9        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add1        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U17     | 10  |        | mul1        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add2        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U17     | 10  |        | mul2        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add3        | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add4        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U19     | 10  |        | mul3        | dmul   | fulldsp  | 13      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U20     | 10  |        | mul4        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13     | 3   |        | add5        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U18     | 10  |        | mul6        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13     | 3   |        | add6        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U18     | 10  |        | mul7        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13     | 3   |        | add7        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U18     | 10  |        | mul8        | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13     | 3   |        | add8        | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13     | 3   |        | add9        | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U21     | 10  |        | mul10       | dmul   | fulldsp  | 13      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U22     | 10  |        | mul11       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U14     | 3   |        | add10       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U19     | 10  |        | mul12       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U14     | 3   |        | add11       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U19     | 10  |        | mul13       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U14     | 3   |        | add12       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U19     | 10  |        | mul14       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U14     | 3   |        | add13       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add14       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U23     | 10  |        | mul15       | dmul   | fulldsp  | 13      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U24     | 10  |        | mul16       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U15     | 3   |        | add15       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U20     | 10  |        | mul17       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U15     | 3   |        | add16       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U20     | 10  |        | mul18       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U15     | 3   |        | add17       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U20     | 10  |        | mul19       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U15     | 3   |        | add18       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U13     | 3   |        | add19       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U25     | 10  |        | mul20       | dmul   | fulldsp  | 13      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U26     | 10  |        | mul21       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U16     | 3   |        | add20       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U21     | 10  |        | mul22       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U16     | 3   |        | add21       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U21     | 10  |        | mul23       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U16     | 3   |        | add22       | dadd   | fulldsp  | 14      |
+|   dmul_64ns_64ns_64_14_full_dsp_1_U21     | 10  |        | mul24       | dmul   | fulldsp  | 13      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U16     | 3   |        | add23       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add24       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add25       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add26       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | add27       | dadd   | fulldsp  | 14      |
+|   dadd_64ns_64ns_64_15_full_dsp_1_U12     | 3   |        | Z           | dadd   | fulldsp  | 14      |
+|   ap_return                               |     |        | add_ln41    | add    | fabric   | 0       |
+|  + predict_model_Pipeline_VITIS_LOOP_29_1 | 26  |        |             |        |          |         |
+|    icmp_ln29_fu_62_p2                     |     |        | icmp_ln29   | seteq  | auto     | 0       |
+|    i_4_fu_68_p2                           |     |        | i_4         | add    | fabric   | 0       |
+|    dexp_64ns_64ns_64_58_full_dsp_1_U1     | 26  |        | tmp         | dexp   | fulldsp  | 57      |
+|  + predict_model_Pipeline_VITIS_LOOP_35_2 | 0   |        |             |        |          |         |
+|    icmp_ln35_fu_69_p2                     |     |        | icmp_ln35   | seteq  | auto     | 0       |
+|    i_2_fu_75_p2                           |     |        | i_2         | add    | fabric   | 0       |
+|    ddiv_64ns_64ns_64_59_no_dsp_1_U4       |     |        | div         | ddiv   | fabric   | 58      |
+|  + predict_model_Pipeline_3               | 0   |        |             |        |          |         |
+|    icmp_ln5658_fu_111_p2                  |     |        | icmp_ln5658 | seteq  | auto     | 0       |
+|    add_ln5658_fu_117_p2                   |     |        | add_ln5658  | add    | fabric   | 0       |
+|    icmp_ln43_fu_176_p2                    |     |        | icmp_ln43   | setne  | auto     | 0       |
+|    icmp_ln43_1_fu_182_p2                  |     |        | icmp_ln43_1 | seteq  | auto     | 0       |
+|    or_ln43_fu_219_p2                      |     |        | or_ln43     | or     | auto     | 0       |
+|    icmp_ln43_2_fu_188_p2                  |     |        | icmp_ln43_2 | setne  | auto     | 0       |
+|    icmp_ln43_3_fu_194_p2                  |     |        | icmp_ln43_3 | seteq  | auto     | 0       |
+|    or_ln43_1_fu_223_p2                    |     |        | or_ln43_1   | or     | auto     | 0       |
+|    dcmp_64ns_64ns_1_4_no_dsp_1_U8         |     |        | tmp_3       | dcmp   | auto     | 3       |
+|    and_ln43_fu_227_p2                     |     |        | and_ln43    | and    | auto     | 0       |
+|    and_ln43_1_fu_232_p2                   |     |        | and_ln43_1  | and    | auto     | 0       |
+|    p_result_fu_238_p3                     |     |        | p_result    | select | auto_sel | 0       |
++-------------------------------------------+-----+--------+-------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-----------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+| Name            | Usage         | Type | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                 |               |      |      |      |        |          |      |         | Banks            |
++-----------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+| + predict_model |               |      | 0    | 0    |        |          |      |         |                  |
+|   y_U           | ram_t2p array |      |      |      |        | y        | auto | 1       | 64, 5, 1         |
++-----------------+---------------+------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+---------------------------------------+
+| Type     | Options | Location                              |
++----------+---------+---------------------------------------+
+| PIPELINE | ii=1    | predict_model.cpp:30 in predict_model |
+| PIPELINE | ii=1    | predict_model.cpp:36 in predict_model |
++----------+---------+---------------------------------------+
+
+
